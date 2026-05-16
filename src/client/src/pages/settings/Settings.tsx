@@ -13,6 +13,7 @@ import { supportedLocales, type SupportedLocales } from "@/hooks/use-appsettings
 import { supportedRegions, useTmdb } from "@/hooks/use-tmdb.ts"
 import { useOmss } from "@/hooks/use-omss.ts"
 import { useHistory } from "@/hooks/use-history.ts"
+import { OMSS_BASE_URL } from "@/lib/omss"
 
 import type { CountryISO3166_1 } from "@lorenzopant/tmdb"
 
@@ -65,7 +66,7 @@ export default function Settings() {
         location.reload()
     }
 
-    const { valid, baseUrl, setBaseUrl } = useOmss()
+    const { valid } = useOmss()
     const { clear, history, remove } = useHistory()
     const { cache } = useTmdb()
 
@@ -273,7 +274,7 @@ export default function Settings() {
 
                                 <span className="flex pt-1 text-muted-foreground">{t("omss.info")}</span>
 
-                                <Input id="omss" value={baseUrl} onChange={(e) => setBaseUrl(e.target.value)} placeholder="http://localhost:3000" />
+                                <Input id="omss" disabled value={OMSS_BASE_URL} />
 
                                 {!standalone && (
                                     <Item className="border-dashed border-border">

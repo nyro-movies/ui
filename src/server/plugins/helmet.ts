@@ -1,5 +1,6 @@
 import type { FastifyInstance } from "fastify"
 import helmet from "@fastify/helmet"
+import { OMSS_BASE_URL } from "../lib/omss"
 
 export async function registerHelmetPlugin(app: FastifyInstance) {
     await app.register(helmet, {
@@ -7,7 +8,7 @@ export async function registerHelmetPlugin(app: FastifyInstance) {
             directives: {
                 defaultSrc: ["'self'"],
 
-                connectSrc: ["'self'", "https://api.themoviedb.org", app.config.VITE_STANDALONE ? "*" : (app.config.VITE_OMSS_API_URL ?? "")],
+                connectSrc: ["'self'", "https://api.themoviedb.org", app.config.VITE_STANDALONE ? "*" : OMSS_BASE_URL],
 
                 imgSrc: ["'self'", "data:", "https://image.tmdb.org"],
 

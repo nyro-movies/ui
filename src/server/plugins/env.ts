@@ -20,9 +20,6 @@ const schema = {
         VITE_TMDB_API_KEY: {
             type: "string",
         },
-        VITE_OMSS_API_URL: {
-            type: "string",
-        },
         VITE_STANDALONE: {
             type: "boolean",
             default: true,
