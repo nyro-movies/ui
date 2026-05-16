@@ -30,7 +30,6 @@ jobs:
               env:
                   VITE_TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
                   VITE_STANDALONE: "true"
-                  VITE_OMSS_API_URL: "http://localhost:3000"
 
             - name: Inject SPA GitHub Pages script
               run: |
