@@ -1,6 +1,6 @@
 import type { FastifyInstance } from "fastify"
 import helmet from "@fastify/helmet"
-import { OMSS_BASE_URL } from "../lib/omss"
+import { OMSS_BASE_URL } from "../lib/omss.js"
 
 export async function registerHelmetPlugin(app: FastifyInstance) {
     await app.register(helmet, {
